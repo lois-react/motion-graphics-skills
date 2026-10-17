@@ -4,8 +4,10 @@
   "private": true,
   "scripts": {
     "studio": "remotion studio",
-    "render": "remotion render FlinxyVideo out/flinxy.mp4",
-    "still": "remotion still FlinxyVideo"
+    "render": "remotion render src/index.ts FlinxyVideo out/flinxy.mp4 --codec=h264 --crf=18 && mkdir -p /out && cp out/flinxy.mp4 /out/flinxy.mp4",
+    "still": "remotion still FlinxyVideo",
+    "capture": "node scripts/capture.mjs",
+    "draft": "remotion render src/index.ts FlinxyVideo out/flinxy-draft.mp4 --codec=h264 --crf=18"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.535",
